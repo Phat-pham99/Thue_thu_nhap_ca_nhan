@@ -30,7 +30,7 @@ def thue_tncn(lương_gross:int,số_người_phụ_thuộc:int):
        elif thu_nhập_tính_thuế  > 80000000 : #Bậc thuế 35%
            thuế = 18150000 + (thu_nhập_tính_thuế-80000000)*35/100 - 4400000*số_người_phụ_thuộc  
    print("-----------------------------------")
-   return bh_tổng,lương_net,thu_nhập_tính_thuế,round(thuế) if thuế > 0 else 0, lương_net - round(thuế) if thuế > 0 else 0 
+   return bh_tổng,lương_net,thu_nhập_tính_thuế,round(thuế) if thuế > 0 else 0, round(lương_net - round(thuế)) if thuế > 0 else 0 
 def input_lương():
    """
    Hàm nhập lương, chỉ nhận giá trị số
@@ -59,6 +59,6 @@ if __name__ == "__main__":
    print(f"lương net là {round(lương_net):,} Đồng")
    print(f"Thu nhập tính thuế là {round(thu_nhập_tính_thuế):,} Đồng")
    print(f'Vậy thuế thu nhập cá nhân bạn cần đóng là : {thuế:,} Đồng')
-   print("-----------------------------------")
    if  còn_lại > 0 :
-       print(f'Sau khi đóng thuế TNCN, bạn còn lại {còn_lại:,} Đồng')
+    print("-----------------------------------") 
+    print(f'Sau khi đóng thuế TNCN, bạn còn lại {còn_lại:,} Đồng')
