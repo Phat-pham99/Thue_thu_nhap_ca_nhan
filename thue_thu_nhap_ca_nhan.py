@@ -36,7 +36,7 @@ def input_lương():
    Hàm nhập lương, chỉ nhận giá trị số
    """
    lương = input("Nhập lương Gross:")
-   if not re.search("((\d{1,3})(?:,[0-9]{3}){1,3}|(\d{1,11}))",lương) :
+   if not re.search(r"((\d{1,3})(?:,[0-9]{3}){1,3}|(\d{1,11}))",lương) :
        print("Chỉ nhận input số, không phải ký tự")
        lương = input_lương()
    return lương
