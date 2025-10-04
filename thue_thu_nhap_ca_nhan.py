@@ -23,17 +23,17 @@ def thue_tncn(
     else:
         TNCN: int = 4400000 * số_người_phụ_thuộc
         match round(thu_nhập_tính_thuế):
-            case num if num in range(0, 5000000):  # Bậc thuế 5%
+            case num if num in range(0, 5000000 + 1):  # Bậc thuế 5%
                 thuế = round(thu_nhập_tính_thuế * 5 / 100 - TNCN)
-            case num if num in range(5000000, 10000000):  # Bậc thuế 10%
+            case num if num in range(5000000, 10000000 + 1):  # Bậc thuế 10%
                 thuế = round(250000 + (thu_nhập_tính_thuế - 5000000) * 10 / 100 - TNCN)
-            case num if num in range(10000000, 18000000):  # Bậc thuế 15%
+            case num if num in range(10000000, 18000000 + 1):  # Bậc thuế 15%
                 thuế = round(750000 + (thu_nhập_tính_thuế - 10000000) * 15 / 100 - TNCN)
             case num if num in range(18000000, 32000000 + 1):  # Bậc thuế 20%
                 thuế = round(
                     1950000 + (thu_nhập_tính_thuế - 18000000) * 20 / 100 - TNCN
                 )
-            case num if num in range(32000000, 52000000):  # Bậc thuế 25%
+            case num if num in range(32000000, 52000000 + 1):  # Bậc thuế 25%
                 thuế = round(
                     4750000 + (thu_nhập_tính_thuế - 32000000) * 25 / 100 - TNCN
                 )
